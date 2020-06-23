@@ -3,34 +3,38 @@ odoo:
     src: https://github.com/oca/ocb 12.0
 
 usability:
-    modules: [base_usability]
+    modules: [base_usability] # Add phone and email in contacts tree
     src: https://github.com/akretion/odoo-usability 12.0
 
 server-brand:
-    modules: [disable_odoo_online, remove_odoo_enterprise]
+    modules: [disable_odoo_online, remove_odoo_enterprise] # because yes
     src: https://github.com/OCA/server-brand 12.0
 
 web:
-    modules: [web_responsive]
+    modules: [web_responsive] # backend_theme_v12 dependency
     src: https://github.com/OCA/web 12.0
 
 backend_theme:
-    modules: [backend_theme_v12]
+    modules: [backend_theme_v12] # web_form_background_color dependency
     remotes:
-        openworx: https://github.com/Openworx/backend_theme  
+        openworx: https://github.com/Openworx/backend_theme
     merges:
             - openworx 12.0
-            - openworx refs/pull/100/head
+            - openworx refs/pull/100/head # PR for better oe_title width
 
 crm:
-    modules: [crm_stage_type]
+    modules: [crm_stage_type] # Display stages in both Leads and Opportunities
     src: https://github.com/OCA/crm 12.0
 
 partner-contact:
-    modules: [partner_external_map]
+    modules: [partner_external_map] # External map buttons in partner form view
     src: https://github.com/OCA/partner-contact 12.0
 
 band-booking:
-    modules: [band_booking, partner_structure, partner_category_type, web_form_background_color]
+    modules: [
+      band_booking, # Link partners with CRM Leads and Events
+      partner_structure, # Distinguish "Structure" partners from "Normal Contacts"
+      partner_category_type, # partner_structure dependency.
+      web_form_background_color, # Custom background color in Leads and Events forms
+    ]
     src: https://github.com/clementmbr/crm-booking 12.0
-
