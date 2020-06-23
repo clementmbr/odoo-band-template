@@ -1,0 +1,36 @@
+odoo:
+    modules: []
+    src: https://github.com/oca/ocb 12.0
+
+usability:
+    modules: [base_usability]
+    src: https://github.com/akretion/odoo-usability 12.0
+
+server-brand:
+    modules: [disable_odoo_online, remove_odoo_enterprise]
+    src: https://github.com/OCA/server-brand 12.0
+
+web:
+    modules: [web_responsive]
+    src: https://github.com/OCA/web 12.0
+
+backend_theme:
+    modules: [backend_theme_v12]
+    remotes:
+        openworx: https://github.com/Openworx/backend_theme  
+    merges:
+            - openworx 12.0
+            - openworx refs/pull/100/head
+
+crm:
+    modules: [crm_stage_type]
+    src: https://github.com/OCA/crm 12.0
+
+partner-contact:
+    modules: [partner_external_map]
+    src: https://github.com/OCA/partner-contact 12.0
+
+band-booking:
+    modules: [band_booking, partner_structure, partner_category_type, web_form_background_color]
+    src: https://github.com/clementmbr/crm-booking 12.0
+
